@@ -26,7 +26,7 @@ def isValid(vargu):
         else:  # Nëse është një kllapë hapëse
             stack.append(char)
 
-    # Nëse stack është bosh, të gjitha kllapat janë mbyllur në mënyrë korrekte
+    # Nëse stack është bosh kthehet true
     return not stack
 
 

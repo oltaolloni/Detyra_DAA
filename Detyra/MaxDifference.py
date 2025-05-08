@@ -7,12 +7,39 @@
 # Sqarim: Vargu i sortuar është [3,9,18,27],
 # dhe çiftet (9,18) dhe (18,27) kanë diferencën më të madhe 9
 
+# Zgjidhja me Radix Sort, i cili perdor Buckets:
+
+def radix_sort(nums):
+    if len(nums) == 0:
+        return []
+
+    max_num = max(nums)
+    exp = 1
+
+    while max_num // exp > 0:
+        # Krijojmë 10 buckets (nga 0 në 9)
+        buckets = [[] for _ in range(10)]
+
+        # Hedhim numrat në bucket sipas shifrës në pozitën exp
+        for num in nums:
+            digit = (num // exp) % 10
+            buckets[digit].append(num)
+
+        # Bashkojmë të gjithë bucket-at në një listë të vetme
+        nums = [num for bucket in buckets for num in bucket]
+
+        exp *= 10
+
+    return nums
+
+
 def max_difference(nums):
     if len(nums) < 2:
         return 0
 
-    # Sortojmë vargun
-    nums.sort()
+    # nums.sort() - me funksion te gatshem
+
+    radix_sort(nums)
 
     # Gjejmë diferencën maksimale midis elementeve të njëpasnjëshme
     max_diff = 0
