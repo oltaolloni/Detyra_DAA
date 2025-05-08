@@ -23,7 +23,7 @@ print(delete_at_index(nums, 2))  # [10, 20, 50, 40]
 # ii)  Përdorimi i një Linked List për fshirje (O(1))
 # Në një array të zakonshëm të sortuar, fshirja e një elementi shkakton
 # zhvendosje të elementeve të mbetura për të mbajtur rendin, qw kerkon O(n) kohe
-# Linked list numdeson ndryshimin e lidhjeve mes nyjeve pa nevojen e zhvendosjes
+# Linked list mundeson ndryshimin e lidhjeve mes nyjeve pa nevojen e zhvendosjes
 class Node:
     def __init__(self, value):
         self.value = value

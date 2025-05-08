@@ -7,12 +7,8 @@
 # Nuk duhet të përdorni asnjë built-in funksion/metodë ose operator.
 
 def square_root(x):
-    if x < 0:
-        return -1  # Për rastet kur inputi është negativ (sipas kërkesës duhet jo-negativ)
-
     left = 0
     right = x
-
     result = 0
     # Përdorim kërkimin binar për të gjetur rrënjën katrore.
     while left <= right:
