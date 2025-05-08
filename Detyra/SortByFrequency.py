@@ -15,21 +15,29 @@
 # KUJDES: "cacaca" është përgjigje e pasaktë, sepse karakteret e njëjta duhet të shfaqen bashkë.
 
 def sortByFrequency(vargu):
-    frequency = {}  # dictionary to store character frequencies
+    frequency = {}  # dictionary per te ruajtur key,value (char, numri i paraqitjes)
     for char in vargu:
         if char in frequency:
             frequency[char] += 1
         else:
             frequency[char] = 1
 
-    # Sort characters first by frequency (descending) and then alphabetically
-    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    # lista e krijuar prej elementeve (karakter, frekuence)
+    lista = [(char, frequency) for char, frequency in frequency.items()]
 
-    result = []
-    for char in sorted_chars:
-        result.append(char * frequency[char])
+    n = len(lista)
 
-    return ''.join(result)  # Return the sorted string
+    # bubble sort
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lista[j][1] < lista[j+1][1]: #krahasojme elementet ngjitur
+                lista[j], lista[j+1] = lista[j+1], lista[j] #swap
+
+    rezultati = ""
+    for char, frequency in lista:
+        rezultati += char*frequency
+
+    return rezultati
 
 # Test the function
 print(sortByFrequency("tree"))  # Output: "eetr" or "eert" depending on sorting
