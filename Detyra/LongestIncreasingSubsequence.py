@@ -25,4 +25,3 @@ vargu = [10, 9, 2, 3, 7, 101, 18]
 rezultati = gjatesia_LIS(vargu)
 print("Gjatësia e nënsekuencës më të gjatë në rritje është:", rezultati)
 
-# Zgjidhja me binary search

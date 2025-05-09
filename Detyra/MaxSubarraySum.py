@@ -5,9 +5,8 @@
 # (nënvargu është [4, -1, 2, 1] ).
 
 def shuma_maksimale_nenvargu(vargu):
-    # Inicializo variablat
     shuma_maksimale = 0  # Shuma maksimale e gjetur deri më tani
-    shuma_aktuale = 0                # Shuma e nënvargut aktual
+    shuma_aktuale = 0    # Shuma e nënvargut aktual
 
     # Itero nëpër çdo element të vargut
     for numri in vargu:

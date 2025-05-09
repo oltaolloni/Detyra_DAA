@@ -16,16 +16,11 @@ def find_132_pattern(vargu):
     # Ruajmë vlerën minimale të mundshme për vargu[i]
     min_i = 0
 
-    # Iterojmë nëpër vargun nga fundi në fillim
     for j in range(n - 1, -1, -1):
-        # Nëse gjejmë një element që është më i vogël se min_i, atëherë kemi gjetur një model 132
         if vargu[j] < min_i:
             return True
-        # Nëse stack nuk është bosh dhe elementi aktual është më i madh se elementi në krye të stack,
-        # atëherë përditësojmë min_i me elementin në krye të stack
         while stack and vargu[j] > stack[-1]:
             min_i = stack.pop()
-        # Shtojmë elementin aktual në stack
         stack.append(vargu[j])
 
     return False

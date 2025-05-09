@@ -14,8 +14,6 @@
 def closest_room(rooms, queries):
     # Rendit dhomat sipas roomId
     rooms.sort()
-
-    # Përgatit përgjigjet
     answer = []
 
     for preferred, min_size in queries:
@@ -28,10 +26,9 @@ def closest_room(rooms, queries):
         else:
             # Gjej dhomën më të afërt në terma të |roomId - preferred|
             min_diff = float('inf')
-            best_room = -1
+            best_room = -1 # nese nuk kemi dhome te pershtatshme (vlere default)
 
-            for room in filtered_rooms:
-                room_id, size = room
+            for room_id, size in filtered_rooms:
                 diff = abs(room_id - preferred)
 
                 if diff < min_diff or (diff == min_diff and room_id < best_room):

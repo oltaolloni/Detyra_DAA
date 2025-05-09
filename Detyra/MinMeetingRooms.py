@@ -21,3 +21,10 @@ def minMeetingRooms(intervals):
 
 intervals = [[0, 30], [5, 10], [15, 20]]
 print(minMeetingRooms(intervals))
+
+
+intervals2 = [[7, 10], [2, 4]]
+print(minMeetingRooms(intervals2))
+
+intervals3 = [[1, 5], [2, 6], [8, 9]]
+print(minMeetingRooms(intervals3))       

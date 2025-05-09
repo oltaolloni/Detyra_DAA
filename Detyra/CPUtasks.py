@@ -10,19 +10,14 @@
 
 from collections import Counter
 def least_interval(tasks, n):
-    # Numëro frekuencën e secilës detyrë
     freq = Counter(tasks)
 
-    # Gjej frekuencën maksimale
     max_freq = max(freq.values())
 
-    # Numëro sa detyra kanë frekuencën maksimale
     num_max_freq = list(freq.values()).count(max_freq)
 
-    # Llogarit numrin minimal të njësive kohore
     min_time = (max_freq - 1) * (n + 1) + num_max_freq
 
-    # Kthe maksimumin midis min_time dhe gjatësisë së detyrave
     return max(min_time, len(tasks))
 
 

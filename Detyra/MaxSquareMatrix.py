@@ -2,7 +2,7 @@
 # të lira (True) ose të zëna (False).
 # Gjeni madhësinë e katrorit më të madh të fushave të lira.
 def maximalSquare(matrix):
-    if not matrix or not matrix[0]:
+    if not matrix:
         return 0  # Nëse matrica është 0, nuk ka katror të lirë
 
     M, N = len(matrix), len(matrix[0])

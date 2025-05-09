@@ -40,19 +40,16 @@ def count_atoms(formula):
                 i += 1
             elif formula[i] == ')':
                 i += 1
-                # Lexo numrin pas kllapave
                 num_str = ''
                 while i < n and formula[i].isdigit():
                     num_str += formula[i]
                     i += 1
                 multiplier = int(num_str) if num_str else 1
-                # Shumëzo dhe shto në elementin e mëparshëm në stack
                 prev = stack.pop()
                 for key in current:
                     prev[key] += current[key] * multiplier
                 current = prev
             else:
-                # Lexo elementin dhe numrin e tij
                 element = re.match(r'([A-Z][a-z]*)', formula[i:]).group(1)
                 i += len(element)
                 num_str = ''
@@ -64,13 +61,10 @@ def count_atoms(formula):
 
         return current
 
-    # Parse the formula
     atoms = parse_formula(formula)
 
-    # Sort the atoms by name
-    sorted_atoms = sorted(atoms.items(), key=lambda x: x[0])
-
-    # Build the result string
+    sorted_atoms = sorted(atoms.items())
+    
     result = ''
     for element, count in sorted_atoms:
         result += element
